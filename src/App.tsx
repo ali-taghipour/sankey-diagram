@@ -5,13 +5,20 @@ import './App.css'
 
 const data = {
   nodes: [
-    { id: 'A' },
-    { id: 'B' },
-    { id: 'C' },
+    { name: 'Node A', startNode: true, size: 20},
+    { name: 'Node B', startNode: true, size: 20 },
+    { name: 'Node C', startNode: true, size: 10},
+    { name: 'Node D'},
+    { name: 'Node E' },
+    { name: 'Node F'},
   ],
   links: [
-    { source: 0, target: 1, value: 10 },
-    { source: 1, target: 2, value: 5 },
+    { source: 'Node A', target: 'Node B', value: 10 },
+    { source: 'Node B', target: 'Node C', value: 5 },
+    { source: 'Node B', target: 'Node D', value: 8 },
+    { source: 'Node C', target: 'Node E', value: 3 },
+    { source: 'Node D', target: 'Node E', value: 2 },
+    { source: 'Node D', target: 'Node F', value: 4 },
   ],
 };
 
