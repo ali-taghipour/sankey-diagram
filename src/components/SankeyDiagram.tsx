@@ -19,7 +19,7 @@ const SankeyDiagram: React.FC<SankeyDiagramProps> = ({ data, width, height }) =>
       const sankeyDiagram = sankey<{}, {}>()
         .nodeId((d:any) => d.name)
         .nodeWidth(20) // Set the custom node width
-        .nodePadding(30) // Set the custom node padding
+        .nodePadding(20) // Set the custom node padding
         .nodeSort(null)
         .nodeAlign(d => {
           // @ts-ignore
@@ -151,9 +151,9 @@ const SankeyDiagram: React.FC<SankeyDiagramProps> = ({ data, width, height }) =>
         .join('path')
         .attr('d', (d:any) => {
           return `M${(d.source as any).x1} ${d.sY1}
-         C${(d.source as any).x1 + ((d.target as any).x0 - (d.source as any).x1)/3}, ${d.sY1} ${(d.target as any).x0 - ((d.target as any).x0 - (d.source as any).x1)/3},${d.tY1} ${(d.target as any).x0} ${d.tY1}    
+         L${(d.target as any).x0} ${d.tY1}    
          L${(d.target as any).x0} ${d.tY0}
-         C${(d.target as any).x0 + ((d.source as any).x1 - (d.target as any).x0)/3}, ${d.sY0} ${(d.source as any).x1 - ((d.source as any).x1 - (d.target as any).x0)/3},${d.sY0} ${(d.source as any).x1} ${d.sY0}`;
+         L${(d.source as any).x1} ${d.sY0}`;
         })
         .attr('stroke-opacity', 0.1)
         .attr('stroke-width', (d:any) => Math.max(1,d.width))

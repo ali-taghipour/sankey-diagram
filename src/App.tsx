@@ -12,7 +12,7 @@ const data = {
     { name: 'RRC-Connection-Request2',group:2},
     { name: 'RRC-Connection-Request3',group:3},
     { name: 'RRC-Connection-Request4',group:4},
-    { name: 'Err1',group:4},
+    { name: 'Err1',group:4, space:true},
     { name: 'Err2',group:5},
     { name: 'Err3',group:6},
   ],
